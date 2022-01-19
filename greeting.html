@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<script src="object_literal.js"></script>
+<!-- <script type="module" src="Book.js"></script> -->
+<script type="module" src="Publication.js"></script>
+<script type="module">
+    import {create as Blogpost} from "./Publication.js";
+
+    var Mybook = Blogpost("YDKJSYT","Kyle","12/04/2020");
+    console.log(import.meta);
+    console.log(this);
+    alert(typeof button);
+    
+    document.body.innerHTML = Mybook.print();
+</script>
+<button id=button>Classic</button>
+</head>
+</html>

@@ -1,0 +1,3 @@
+function Publication(title,author,pubDate){
+ console.log(``)   
+}

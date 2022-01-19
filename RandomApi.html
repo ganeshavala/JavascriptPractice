@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<style>
+    .person{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    border: 2px solid #000;
+    padding: 24px;
+    width: 300px;
+    margin: 0 auto 80px;
+    }
+    .person>img{
+    border-radius: 50%;
+    }
+</style>
+<div id="friends">
+<script>
+async function getfriends() {
+    const friendsNode = document.querySelector('#friends');
+    const friends = await fetch('https://randomuser.me/api/?results=20');
+    const fresults = await friends.json();
+    fresults.results.forEach((friend)=>{
+        let name =`${friend.name.first} ${friend.name.last}`;
+        let nameParagraph = document.createElement('p');
+        nameParagraph.textContent =name;
+        let picture = document.createElement('img');
+        picture.src = friend.picture.large;
+        picture.alt = name;
+        let div =document.createElement('div');
+        div.classList.add('person');
+        div.appendChild(nameParagraph);
+        div.appendChild(picture);
+        friendsNode.appendChild(div);
+    })
+}    
+getfriends();
+
+</script>
+</div>
+</body>
+</head>
+</html>
+<span>UserID: int</span> PK
+<span>Name: varchar(20)</span>
+<span>Email: varchar(32)</span>
+CreationDate: datetime<br>
+<span>LastLogin: datatime</span>
